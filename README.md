@@ -2,9 +2,7 @@
 Need a typing for your history, for roman, for others in your code? Now **typing.js** is here.
 
 ## Installation
-To use **typing.js**, You can download via:
-- Normal: [typing.js](https://github.com/Dob6458/typingjs/libs/typing.js)
-- Minified: [typing.min.js](https://github.com/Dob6458/typingjs/libs/typing.min.js)
+To use **typing.js**, You must go to the [releases](https://github.com/Dob6458/typingjs/releases) in `v1.0`
 
 ## Code
 Once **typing.js** installed, import it using `<script>` tag on HTML file:
