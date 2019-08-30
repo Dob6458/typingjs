@@ -42,7 +42,9 @@ window.onload = function() {
 Automatically, this element that you have selected is gonna typing.
 
 #### Result:
+
 ![result_one](images/image_one.gif)
+
 ### Typing with options
 Of course, you can use options to edit something:
 ```js
@@ -56,7 +58,9 @@ window.onload = function() {
 }
 ```
 #### Result:
+
 ![result_two](images/image_two.gif)
+
 We have created this options through `Object.assign({}, options_default, options)`
 ### Events
 ```js
