@@ -26,7 +26,7 @@ Once **typing.js** installed, import it using `<script>` tag on HTML file:
 <!--
   Use <span> or <div> tags
 -->
-<span id="typing">Hi, he's typing automatically</span>
+<span id="typing">Typing.js is work successfuly</span>
 ```
 
 Then, create a file called `index.js` file and copy this code.
