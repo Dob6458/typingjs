@@ -37,6 +37,7 @@ window.onload = function() {
     You can use the id, class or tags through "document.querySelector()"
   */
   var typing = new Typing("#typing");
+  typing.start();
 }
 ```
 Automatically, this selected element is gonna type!
@@ -55,6 +56,7 @@ window.onload = function() {
     speed: 40,
     transition: 150
   });
+  typing.start();
 }
 ```
 #### Result:
