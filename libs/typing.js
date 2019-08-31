@@ -12,7 +12,7 @@ function Typing(id, options={}) {
   console.log(options_default)
 
   // Assign it to make options
-  var actual = Object.assign({}, options_default, options);
+  let actual = Object.assign({}, options_default, options);
   
   /**
    * This function allows to add event when typing
@@ -41,12 +41,12 @@ function Typing(id, options={}) {
    * @param {object} element 
    */
   let init = function(element) {
-    var val = element.innerText;
-    var value = "";
+    let val = element.innerText;
+    let value = "";
           
-    var pos = 0;
+    let pos = 0;
 
-    var x = setInterval(function() {
+    let x = setInterval(function() {
       value += val[pos];
       element.innerText = value;
           
@@ -63,7 +63,7 @@ function Typing(id, options={}) {
    * @param {object} element 
    */
   let typing = function(element) {
-    var style = getComputedStyle(element);
+    let style = getComputedStyle(element);
     element.style.transition = actual.transition;
     element.style.borderRight = "1.5px solid " + actual.color;
     element.style.paddingRight = "1px";
@@ -77,7 +77,7 @@ function Typing(id, options={}) {
    * @param {object} element
    */
   let bool = function(element) {
-    var bool = false;
+    let bool = false;
           
     setInterval(function() {
       if (bool) {
