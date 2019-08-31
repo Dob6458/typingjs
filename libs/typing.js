@@ -1,15 +1,6 @@
-//
-// Framework created by Dob6458
-// PLEASE: DON'T edit something in this code
-//
-
-/**
- * This function become a class
- */
 function Typing(id, options={}) {
-  var id = id;
-  var element = document.querySelector(id);
-      
+  this.element = document.querySelector(id);
+  
   // Make the options by default
   options_default = {
     color: "black",
@@ -40,7 +31,7 @@ function Typing(id, options={}) {
     };
 
     // Add event if it's work
-    return element.addEventListener(event, callback);
+    return this.element.addEventListener(event, callback);
   };
 
   /**
@@ -98,6 +89,13 @@ function Typing(id, options={}) {
     }, actual.transition * 3);
   };
 
-  // Initalize functions
-  init(element) && typing(element) && bool(element)
+  /**
+  * Starts the typing effect
+  * @private This function is private
+  */
+  this.start = function() {
+    init(this.element);
+    typing(this.element);
+    bool(this.element);
+  }
 }
