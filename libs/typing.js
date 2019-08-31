@@ -5,7 +5,8 @@ function Typing(id, options={}) {
   options_default = {
     color: "black",
     speed: 60,
-    transition: 150
+    transition: 150, 
+    width: 1.5,
   };
 
   console.log(options_default)
@@ -81,10 +82,21 @@ function Typing(id, options={}) {
     setInterval(function() {
       if (bool) {
         bool = false;
-        element.style.borderRight = "1.5px solid transparent"
+        element.style.borderRight = "0px solid transparent";
       } else {
         bool = true;
-        element.style.borderRight = "1.5px solid " + actual.color;
+        element.style.borderRight = actual.width + "px solid " + actual.color;
       }
     }, actual.transition * 3);
   };
+
+  /**
+  * Starts the typing effect
+  * @private This function is private
+  */
+  this.start = function() {
+    init(this.element);
+    typing(this.element);
+    bool(this.element);
+  }
+}
