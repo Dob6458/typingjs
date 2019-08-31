@@ -65,7 +65,7 @@ function Typing(id, options={}) {
   let typing = function(element) {
     let style = getComputedStyle(element);
     element.style.transition = actual.transition;
-    element.style.borderRight = "1.5px solid " + actual.color;
+    element.style.borderRight = actual.width + "solid " + actual.color;
     element.style.paddingRight = "1px";
     element.style.display = "inline";
   };
