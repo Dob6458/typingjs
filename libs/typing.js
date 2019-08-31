@@ -21,14 +21,14 @@ function Typing(id, options={}) {
    */
   this.on = function(event, callback) {
     // If "event" variable is not a string
-    if (!typeof event === "string") {
+    if (typeof event !== "string") {
       return console.log("The event must be in string");
-    };
+    }
 
     // If "callback" variable is not a function
-    if (!typeof callback === "function") {
+    if (typeof callback !== "function") {
       return console.log("The callback must be a function");
-    };
+    }
 
     // Add event if it's work
     return this.element.addEventListener(event, callback);
@@ -79,7 +79,7 @@ function Typing(id, options={}) {
     var bool = false;
           
     setInterval(function() {
-      if (bool == true) {
+      if (bool) {
         bool = false;
         element.style.borderRight = "1.5px solid transparent"
       } else {
@@ -88,14 +88,3 @@ function Typing(id, options={}) {
       }
     }, actual.transition * 3);
   };
-
-  /**
-  * Starts the typing effect
-  * @private This function is private
-  */
-  this.start = function() {
-    init(this.element);
-    typing(this.element);
-    bool(this.element);
-  }
-}
