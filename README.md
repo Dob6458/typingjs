@@ -2,16 +2,16 @@
 Need a typing for your history, for roman, for others in your code? Now **typing.js** is here.
 
 ## What is typing.js
-**typing.js** is a framework that allows to typing automatically if you have put the value in the tag.
+**typing.js** is a framework that allows to type automatically if you have put a value in the tag.
 
 ## Installation
-To use **typing.js**, You can use it via CDN: 
+You can use typing.js via CDN
 - CDN:
   - Normal: https://jsdelivr.net/gh/Dob6458/typingjs/libs/typing.js
   - Minified: https://jsdelivr.net/gh/Dob6458/typingjs/libs/typing.min.js
 
 ## Changelogs
-You can check it in CHANGELOG.md file in this repository
+You can check it in [CHANGELOG.md](CHANGELOG.md) file in this repository
 
 ## Code
 Once **typing.js** installed, import it using `<script>` tag on HTML file:
@@ -26,7 +26,7 @@ Once **typing.js** installed, import it using `<script>` tag on HTML file:
 <!--
   Use <span> or <div> tags
 -->
-<span id="typing">Typing.js is work successfuly</span>
+<span id="typing">Typing.js is working successfuly</span>
 ```
 
 Then, create a file called `index.js` file and copy this code.
@@ -37,9 +37,10 @@ window.onload = function() {
     You can use the id, class or tags through "document.querySelector()"
   */
   var typing = new Typing("#typing");
+  typing.start();
 }
 ```
-Automatically, this element that you have selected is gonna typing.
+Automatically, this selected element is gonna type!
 
 #### Result:
 
@@ -55,6 +56,7 @@ window.onload = function() {
     speed: 40,
     transition: 150
   });
+  typing.start();
 }
 ```
 #### Result:
