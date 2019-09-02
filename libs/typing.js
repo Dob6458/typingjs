@@ -5,7 +5,7 @@
 
 function Typing(id, options={}) {
   ///////////////////// CONSTRUCTOR ZONE /////////////////////
-  let element = document.querySelector(id);
+  var element = document.querySelector(id);
   
   // Make the options by default
   options_default = {
@@ -102,15 +102,15 @@ function Typing(id, options={}) {
    * @private This function is private
    * @param {object} element
    */
-  let bool = function(element) {
-    let bool = false;
+  let booleans = function(element) {
+    let bools = false;
           
     setInterval(function() {
-      if (bool) {
-        bool = false;
+      if (bools) {
+        bools = false;
         element.style.borderRight = actual.width + "px solid transparent";
       } else {
-        bool = true;
+        bools = true;
         element.style.borderRight = actual.width + "px solid " + actual.color;
       }
     }, actual.transition * 3);
@@ -120,6 +120,6 @@ function Typing(id, options={}) {
   (function() {
     init(element);
     typing(element);
-    bool(element);
+    booleans(element);
   })();
 }
