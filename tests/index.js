@@ -1,12 +1,8 @@
 window.onload = function() {
+  // There's options in this code
   var typing = new Typing("#typing", {
-    color: "green",
-    speed: 1000,
+    color: "orange",
+    speed: 40,
     transition: 150
-  });
-  typing.start();
-
-  typing.on("click", function() {
-    alert("Hello world");
   });
 }

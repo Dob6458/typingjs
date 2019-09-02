@@ -4,7 +4,7 @@ Coming soon for the future versions...
 
 ## 1.0.1
 - Code fixed
-- Events added
+- Functions added `on()` and `off()`
 - Private functions worked correctly
 - CDN avaliable (check it on README.md)
 

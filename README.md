@@ -37,7 +37,6 @@ window.onload = function() {
     You can use the id, class or tags through "document.querySelector()"
   */
   var typing = new Typing("#typing");
-  typing.start();
 }
 ```
 Automatically, this selected element is gonna type!
@@ -56,7 +55,6 @@ window.onload = function() {
     speed: 40,
     transition: 150
   });
-  typing.start();
 }
 ```
 #### Result:
@@ -75,6 +73,8 @@ window.onload = function() {
 }
 ```
 We use `document.addEventListener(event, callback)` for the events if `Typing()` class is declared.
+
+For more information, you can go to the [documentation](https://dob6458.github.io/libraries/typingjs/docs) (Website not published yet)
 
 ## Issues or Feedback
 If you have a problem, please, create an [issue](https://github.com/Dob6458/typingjs/issues) on Github or contact me on:

@@ -1,42 +1,69 @@
+//
+// Library created by // Zohir on 02/09/2019
+// Typing.js (Dob6458/typingjs)
+//
+
 function Typing(id, options={}) {
-  this.element = document.querySelector(id);
+  ///////////////////// CONSTRUCTOR ZONE /////////////////////
+  let element = document.querySelector(id);
   
   // Make the options by default
   options_default = {
     color: "black",
     speed: 60,
     transition: 150, 
-    width: 1.5,
+    width: 1.5
   };
-
-  console.log(options_default)
 
   // Assign it to make options
   let actual = Object.assign({}, options_default, options);
+  ///////////////////// CONSTRUCTOR ZONE /////////////////////
   
   /**
    * This function allows to add event when typing
-   * @public This function is now public
-   * @param {string} event
-   * @param {function} callback
+   * @public This function is public
+   * @param {string} event "event" must be a string
+   * @param {function} callback "callback" must be a function
    */
   this.on = function(event, callback) {
     // If "event" variable is not a string
     if (typeof event !== "string") {
-      return console.log("The event must be in string");
+      return console.error("The event must be in string");
     }
 
     // If "callback" variable is not a function
     if (typeof callback !== "function") {
-      return console.log("The callback must be a function");
+      return console.error("The callback must be a function");
     }
 
     // Add event if it's work
-    return this.element.addEventListener(event, callback);
+    return element.addEventListener(event, callback);
   };
 
   /**
-   * Create a function is used to start typing automatically
+   * This allows to remove event when typing
+   * @public This function is public
+   * @param {string} event "event" must be a string
+   * @param {function} callback "callback" must be a function
+   * @param {boolean} bool "bool" is null (by default)
+   */
+  this.off = function(event, callback, bool=null) {
+    // If "event" variable is not a string
+    if (typeof event !== "string") {
+      return console.error("The event must be a string");
+    };
+
+    // If "callback" variable is not a function
+    if (typeof callback !== "function") {
+      return console.error("The callback must be a function");
+    };
+
+    // Remove event if it's work
+    return element.removeEventListener(event, callback, bool);
+  };
+
+  /**
+   * Create a function that allows to start type automatically
    * @private This function is private
    * @param {object} element 
    */
@@ -63,7 +90,6 @@ function Typing(id, options={}) {
    * @param {object} element 
    */
   let typing = function(element) {
-    let style = getComputedStyle(element);
     element.style.transition = actual.transition;
     element.style.borderRight = actual.width + "solid " + actual.color;
     element.style.paddingRight = "1px";
@@ -73,7 +99,7 @@ function Typing(id, options={}) {
   /**
    * Create a function that allows to animate the cursor during typing
    * 
-   * @private This function is now private
+   * @private This function is private
    * @param {object} element
    */
   let bool = function(element) {
@@ -82,7 +108,7 @@ function Typing(id, options={}) {
     setInterval(function() {
       if (bool) {
         bool = false;
-        element.style.borderRight = "0px solid transparent";
+        element.style.borderRight = actual.width + "px solid transparent";
       } else {
         bool = true;
         element.style.borderRight = actual.width + "px solid " + actual.color;
@@ -90,13 +116,10 @@ function Typing(id, options={}) {
     }, actual.transition * 3);
   };
 
-  /**
-  * Starts the typing effect
-  * @private This function is private
-  */
-  this.start = function() {
-    init(this.element);
-    typing(this.element);
-    bool(this.element);
-  }
+  // This function start automatically if it's work
+  (function() {
+    init(element);
+    typing(element);
+    bool(element);
+  })();
 }
