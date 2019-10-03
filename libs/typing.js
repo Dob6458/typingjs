@@ -12,13 +12,30 @@ function Typing(id, options={}) {
     color: "black",
     speed: 60,
     transition: 150, 
-    width: 1.5
+    width: 1.5,
+    string: ""
   };
 
   // Assign it to make options
   let actual = Object.assign({}, options_default, options);
   ///////////////////// CONSTRUCTOR ZONE /////////////////////
+
+  // Create a promise
+  var promise = new Promise((resolve, reject) => {
+    resolve("Function work");
+    reject("Function not work");
+  });
+
+  // Callback function if this promise is work
+  promise.then(() => {
+    init(element); typing(element); booleans(element);
+  });
   
+  // When the promise is not work
+  promise.catch((err) => {
+    console.log(err);
+  })
+
   /**
    * This function allows to add event when typing
    * @public This function is public
@@ -68,18 +85,18 @@ function Typing(id, options={}) {
    * @param {object} element 
    */
   let init = function(element) {
-    let val = element.innerText;
-    let value = "";
-          
-    let pos = 0;
+    let value = actual.string;
+    let type = "";
+
+    let position = 0;
 
     let x = setInterval(function() {
-      value += val[pos];
-      element.innerText = value;
-          
-      pos++;
-                
-      if (pos > val.length - 1) {
+      type += value[position];
+      element.innerText = type;
+
+      position++;
+
+      if (position > value.length - 1) {
         clearInterval(x);
       }
     }, actual.speed);
@@ -90,14 +107,15 @@ function Typing(id, options={}) {
    * @param {object} element 
    */
   let typing = function(element) {
+    let borders = actual.width + "solid " + actual.color;
     element.style.transition = actual.transition;
-    element.style.borderRight = actual.width + "solid " + actual.color;
+    element.style.borderRight = borders;
     element.style.paddingRight = "1px";
     element.style.display = "inline";
   };
   
   /**
-   * Create a function that allows to animate the cursor during typing
+   * Create a function that allows to animate the cursor while typing
    * 
    * @private This function is private
    * @param {object} element
@@ -115,11 +133,4 @@ function Typing(id, options={}) {
       }
     }, actual.transition * 3);
   };
-
-  // This function start automatically if it's work
-  (function() {
-    init(element);
-    typing(element);
-    booleans(element);
-  })();
 }

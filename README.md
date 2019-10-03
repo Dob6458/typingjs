@@ -26,7 +26,7 @@ Once **typing.js** installed, import it using `<script>` tag on HTML file:
 <!--
   Use <span> or <div> tags
 -->
-<span id="typing">Typing.js is working successfuly</span>
+<span id="typing"></span>
 ```
 
 Then, create a file called `index.js` file and copy this code.
@@ -36,7 +36,9 @@ window.onload = function() {
   /**
     You can use the id, class or tags through "document.querySelector()"
   */
-  var typing = new Typing("#typing");
+  var typing = new Typing("#typing", {
+    string: "Typing.js is working successfuly"
+  });
 }
 ```
 Automatically, this selected element is gonna type!
@@ -53,7 +55,8 @@ window.onload = function() {
   var typing = new Typing("#typing", {
     color: "orange",
     speed: 40,
-    transition: 150
+    transition: 150,
+    string: "Typing.js is working successfuly"
   });
 }
 ```
@@ -76,7 +79,13 @@ We use `document.addEventListener(event, callback)` for the events if `Typing()`
 
 For more information, you can go to the [documentation](https://dob6458.github.io/libraries/typingjs/docs) (Website not published yet)
 
+## Contributors
+Thanks to:
+
+![Seniru](https://avatars0.githubusercontent.com/u/34127015?s=50&v=4)
+
 ## Issues or Feedback
 If you have a problem, please, create an [issue](https://github.com/Dob6458/typingjs/issues) on Github or contact me on:
 - Discord: // ζohιπ#5914
 - Sololearn Profile ID: 6015460
+- Email: dob6458@outlook.com
