@@ -2,6 +2,10 @@
 
 Coming soon for the future versions...
 
+## 1.0.4
+- Renamed **Typer.js** instead **typing.js**
+- Updated README.md
+
 ## 1.0.3
 - Added promise to callback private functions
 - Added `string` variable in the options

@@ -1,9 +1,9 @@
 //
 // Library created by // Zohir on 02/09/2019
-// Typing.js (Dob6458/typingjs)
+// Typer.js (Dob6458/typerjs)
 //
 
-function Typing(id, options={}) {
+function Typer(id, options={}) {
   ///////////////////// CONSTRUCTOR ZONE /////////////////////
   var element = document.querySelector(id);
   
@@ -103,7 +103,7 @@ function Typing(id, options={}) {
   };
   
   /**
-   * @private This function is now private
+   * @private This function is private
    * @param {object} element 
    */
   let typing = function(element) {
